@@ -1,0 +1,28 @@
+﻿@model MusicModel
+@{
+    ViewData["Title"] = "Editar música";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar música</h1>
+</div>
+
+<form asp-controller="Music" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id" />
+    <div class="mb-3">
+        <label for="nome">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome da música">
+    </div>
+    <div class="mb-3">
+        <label for="banda">Banda</label>
+        <input type="text" asp-for="Banda" class="form-control" placeholder="Digite o nome da banda">
+    </div>
+    <div class="mb-3">
+        <label for="album">Álbum</label>
+        <input type="text" asp-for="Album" class="form-control" placeholder="Digite o nome da álbum">
+    </div>
+
+    <button type="submit" class="btn btn-primary w-100 mb-2">Alterar</button>
+    <a class="btn btn-secondary w-100" asp-controller="Music" asp-action="Index" role="button">Voltar</a>
+</form>
